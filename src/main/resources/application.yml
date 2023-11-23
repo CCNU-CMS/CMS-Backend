@@ -1,0 +1,35 @@
+# application.yml
+
+logging:
+  level:
+    root: DEBUG
+
+spring:
+
+  application:
+    name: ${APP_NAME:unnamed}
+  datasource:
+#    url: jdbc:mysql://mysql/ordering_system
+    url: jdbc:mysql://127.0.0.1/cms  #?????
+    username: root
+    password: 036068
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+
+server:
+  servlet:
+    context-path: /api/v1
+  port: 3918
+  address: 0.0.0.0
+
+jwt:
+  secret: cms
+  expiration: 86400000
+

@@ -1,0 +1,28 @@
+package com.cmsbackend.entity.user_entity;
+
+import lombok.Data;
+
+import javax.persistence.*;
+
+@Data
+@Table(name = "users")
+@Entity
+public class User{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(length = 50)
+    private String name;
+
+    @Column(length = 30)
+    private String account;
+
+    @Column(length = 20)
+    private String password;
+
+    @Column
+    private Integer identity;
+
+
+}
