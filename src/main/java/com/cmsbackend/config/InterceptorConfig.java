@@ -13,8 +13,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry.addInterceptor(new JwtIntercept())
                 //.addPathPatterns("/user/test")  //需要token验证的都这样写
                 .addPathPatterns("/**")
-//                .excludePathPatterns("/admin/login")
+                .excludePathPatterns("/user/login")
 //                .excludePathPatterns("/admin/verify")
-                .excludePathPatterns("/admin/add"); //不需要token验证的都这样写
+                .excludePathPatterns("/user/admin/add"); //不需要token验证的都这样写
     }
 }
