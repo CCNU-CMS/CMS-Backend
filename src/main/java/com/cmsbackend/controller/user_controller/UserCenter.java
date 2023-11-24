@@ -18,7 +18,7 @@ import io.swagger.annotations.ApiOperation;
 
 @Slf4j
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/user")
 @Api(tags = "用户接口")
 @CrossOrigin(origins = "*")
 public class UserCenter {
@@ -31,11 +31,10 @@ public class UserCenter {
     }
 
     @ApiOperation("新增用户")
-    @PostMapping(value = "/add", headers = "Content-Type=application/json", produces = "application/json")
+    @PostMapping(value = "/admin/add", headers = "Content-Type=application/json", produces = "application/json")
     public Map<String,Object> Register(@RequestBody AddRequest request) {
         Map<String, Object> resultMap = new HashMap<>();
         User user = userService.getUserByAccount(request.getAccount());
-//        System.out.println(request);
         if (user!=null){
             throw new RuntimeException("用户已注册");
         }
@@ -54,32 +53,6 @@ public class UserCenter {
         resultMap.put("token",token);
         return resultMap;
     }
-/*
-    @ApiOperation("用户信息更新")
-    @PostMapping(value = "/info", headers = "Content-Type=application/json", produces = "application/json")
-//   @GetMapping(value = "register")
-    public String UpdateInfo(@RequestBody UpdateInfoRequest request,@RequestAttribute("email") String email) {
-
-        User user = userService.getUserByEmail(email);
-//        User user = new User();
-//        user.setLogo(request.getLogo());
-        user.setPhone(request.getPhone());
-        user.setLogo(request.getLogo());
-        user.setAddress(request.getAddress());
-        user.setCertificate_code(request.getCertificate_code());
-        user.setCertificate_image(request.getCertificate_image());
-        user.setContact_people(request.getContact_people());
-        try {
-            userService.save(user);
-            return "修改成功";
-        }catch (Exception e)
-        {
-            throw new RuntimeException("Failed to update info",e);
-        }
-    }
-*/
-
-
 
     @ApiOperation("用户登录")
     @PostMapping(value = "/login")
@@ -87,10 +60,8 @@ public class UserCenter {
         System.out.println(request);
         String token = null;
         System.out.println(request);
-//        String email =  authentication.getName();
         int identity;
         Map<String, Object> resultMap = new HashMap<>();
-//        System.out.println("hello------------");
         User user = userService.getUserByAccount(request.getAccount());
 
         System.out.println(user);
@@ -104,9 +75,26 @@ public class UserCenter {
         }else {
             throw new RuntimeException("密码错误");
         }
-//        System.out.println(token);
 
         return resultMap;
+    }
+
+
+    @ApiOperation("修改密码")
+    @PutMapping(value = "/password")
+    public String UpdatePassword(@RequestBody UpdatePswRequest request, @RequestAttribute("account") String account){
+
+        User user = userService.getUserByAccount(account);
+        if (Hash.match(request.getOldPassword(),user.getPassword())){
+            user.setPassword(Hash.encoder(request.getNewPassword()));
+            try {
+                userService.save(user);
+                return "修改密码成功";
+            }catch (Exception e){
+                throw new RuntimeException("修改失败");
+            }
+        }
+        throw new RuntimeException("原始密码错误");
     }
 
 /*
@@ -126,26 +114,6 @@ public class UserCenter {
     }
 
 */
-
-    @ApiOperation("修改密码")
-    @PostMapping(value = "/password")
-    public String UpdatePassword(@RequestBody UpdatePswRequest request, @RequestAttribute("account") String account){
-
-        User user = userService.getUserByAccount(account);
-//        System.out.println(request);
-        if (Hash.match(request.getOldPassword(),user.getPassword())){
-            user.setPassword(Hash.encoder(request.getNewPassword()));
-            try {
-                userService.save(user);
-                return "修改密码成功";
-            }catch (Exception e){
-                throw new RuntimeException("修改失败");
-            }
-        }
-        throw new RuntimeException("原始密码错误");
-    }
-
-
 
     @ApiOperation("错误")
     @GetMapping(value = "/error")
