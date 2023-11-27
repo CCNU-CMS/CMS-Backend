@@ -1,7 +1,5 @@
 package com.cmsbackend.service.user_service;
 
-
-
 import com.cmsbackend.entity.user_entity.User;
 
 public interface UserService {
@@ -12,6 +10,8 @@ public interface UserService {
     User getUserByAccount(String Account);
 
     int getIdentity(String Account);
+
+    void deleteUserByAccount(String account);
 
 //    List<User> getInfo(Integer identity, Integer status,Integer pageNum,Integer pageSize);
 

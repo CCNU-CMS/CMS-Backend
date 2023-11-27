@@ -1,14 +1,13 @@
-package com.cmsbackend.entity.user_entity;
+package com.cmsbackend.entity.course_entity;
 
 import lombok.Data;
-import org.springframework.data.redis.connection.stream.StreamInfo;
 
 import javax.persistence.*;
 
 @Data
-@Table(name = "users")
+@Table(name = "courses")
 @Entity
-public class User{
+public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,19 +16,15 @@ public class User{
     private String name;
 
     @Column(length = 30)
-    private String account;
+    private String time;
 
     @Column(length = 20)
-    private String password;
-
-    @Column(length = 20)
-    private String sex;
+    private String classroom;
 
     @Column(length = 20)
     private String dept;
 
-    @Column
-    private Integer identity;
-
+    @Column(length = 255)
+    private String description;
 
 }

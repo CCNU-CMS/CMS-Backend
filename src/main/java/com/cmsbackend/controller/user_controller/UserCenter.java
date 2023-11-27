@@ -1,13 +1,12 @@
 package com.cmsbackend.controller.user_controller;
 
-import com.cmsbackend.controller.user_controller.user_vo.AddRequest;
-import com.cmsbackend.controller.user_controller.user_vo.LoginRequest;
-import com.cmsbackend.controller.user_controller.user_vo.UpdatePswRequest;
+import com.cmsbackend.controller.user_controller.user_vo.*;
 import com.cmsbackend.entity.user_entity.User;
 import com.cmsbackend.service.user_service.UserService;
 import com.cmsbackend.utils.JWT.JwtTokenUtil;
 import com.cmsbackend.utils.hash.Hash;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -97,23 +96,33 @@ public class UserCenter {
         throw new RuntimeException("原始密码错误");
     }
 
-/*
-
-    @ApiOperation("用户信息")
-    @GetMapping(value = "/info")
-    public InfoResp Info(@RequestAttribute("email") String email){
-        System.out.println("email");
-        System.out.println(email);
-        User user = userService.getUserByEmail(email);
-        InfoResp resp = new InfoResp(user.getId(), user.getEmail(),user.getPhone(), user.getLogo(),
-                user.getAddress(), user.getCertificate_code(), user.getCertificate_image(), user.getIdentity(),
-                user.getStatus(),user.getContact_people());
-
-        return resp;
+    @ApiOperation("删除用户信息")
+    @DeleteMapping(value = "/admin")
+    @Transactional
+    public String Info(@RequestParam("code") String code, @RequestAttribute("account") String account) {
+        try {
+            userService.deleteUserByAccount(account);
+            return "删除用户成功";
+        } catch (Exception e) {
+            e.printStackTrace(); // 打印异常堆栈信息
+            throw new RuntimeException("删除失败");
+        }
 
     }
 
-*/
+
+
+    @ApiOperation("用户信息")
+    @GetMapping(value = "/info")
+    public InfoResp Info(@RequestAttribute("account") String account){
+        System.out.println("account");
+        System.out.println(account);
+        User user = userService.getUserByAccount(account);
+        InfoResp resp = new InfoResp(user.getId(), user.getName(),user.getSex(),user.getAccount(),user.getDept(),user.getIdentity());
+        return resp;
+    }
+
+
 
     @ApiOperation("错误")
     @GetMapping(value = "/error")
