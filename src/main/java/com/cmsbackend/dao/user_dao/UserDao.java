@@ -9,6 +9,7 @@ public interface UserDao extends JpaRepository<User,Integer>,Serializable {
 
     User getById(Long ID);
     User findByAccount(String Account);
+    void deleteByAccount(String account);
 
 //    List<User> findAllByIdentityAndStatus(Integer Identity, Integer  Status, Pageable pageable);
 }

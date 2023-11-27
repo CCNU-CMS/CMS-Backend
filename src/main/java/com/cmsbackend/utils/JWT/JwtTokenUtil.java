@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Component
 public class JwtTokenUtil {
-    
+
     private static  String secretKey = "cmsbackend";
     private static long expiration = 86400000;
     static {

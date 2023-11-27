@@ -41,6 +41,10 @@ public class UserServiceImpl implements UserService {
         return user.getIdentity();
    }
 
+    public void deleteUserByAccount(String account){
+        userDao.deleteByAccount(account);
+    }
+
 //   public List<User> getInfo(Integer identity, Integer status,Integer pageNum,Integer pageSize){
 //     Pageable pageable = PageRequest.of(pageNum,pageSize);
 //     List<User> user = userDao.findAllByIdentityAndStatus(identity,status, pageable);
