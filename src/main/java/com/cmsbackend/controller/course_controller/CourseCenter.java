@@ -139,6 +139,7 @@ public class CourseCenter {
             course.add(c);
         }
         System.out.println(6);
+        System.out.println(7);
 
         System.out.println(course.size());
         return course;
