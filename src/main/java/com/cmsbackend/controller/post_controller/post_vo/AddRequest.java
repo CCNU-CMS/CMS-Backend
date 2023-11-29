@@ -10,9 +10,7 @@ import java.util.List;
 @Data
 @ApiModel
 public class AddRequest {
-    Long Id;
     String Content;
-    Date created_at;
     List<Long> tag_id;
     String account;
 }

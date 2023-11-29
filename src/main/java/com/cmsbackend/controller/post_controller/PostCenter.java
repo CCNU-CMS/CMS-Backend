@@ -5,6 +5,7 @@ import com.cmsbackend.entity.posts_entity.Post;
 import com.cmsbackend.entity.user_entity.User;
 import com.cmsbackend.entity.tags_entity.Tag;
 import com.cmsbackend.service.post_service.PostService;
+import com.cmsbackend.service.post_tag_service.PostTagService;
 import com.cmsbackend.service.user_service.UserService;
 import com.cmsbackend.service.tag_service.TagService;
 import io.swagger.annotations.Api;
@@ -12,8 +13,10 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,15 +27,17 @@ import java.util.List;
 @Api(tags = "Post Controller")
 public class PostCenter {
 
+    private final TagService tagService;
     private final PostService postService;
     private final UserService userService;
-    private final TagService tagService;
+    private final PostTagService postTagService;
 
-    public PostCenter(PostService postService, UserService userService, TagService tagService)
+    public PostCenter(PostService postService, UserService userService, TagService tagService,PostTagService postTagService)
     {
         this.postService = postService;
         this.userService = userService;
         this.tagService = tagService;
+        this.postTagService = postTagService;
     }
 
     @PostMapping(value ="/add", headers = "Content-Type=application/json", produces = "application/json")
@@ -42,9 +47,9 @@ public class PostCenter {
          //postRequest.getId(), postRequest.getContent(), postRequest.getCreated_at(), postRequest.getTags()
         //  设置post属性
         Post post = new Post();
-        post.setId(addRequest.getId());
         post.setContent(addRequest.getContent());
-        post.setCreatedAt(addRequest.getCreated_at());
+        post.setCreatedAt(LocalDateTime.now());
+        //post.setCreatedAt(addRequest.getCreated_at());
         List<Long> tagIds = addRequest.getTag_id();//获取tag_id
         // 创建一个空的 tags 集合
         Set<Tag> tags = new HashSet<>();
@@ -66,7 +71,7 @@ public class PostCenter {
         catch (Exception e)
         {
             log.error("Failed to create post",e);
-            throw new RuntimeException("Failed to create course", e);
+            throw new RuntimeException("Failed to create post", e);
         }
     }
 
@@ -79,20 +84,24 @@ public class PostCenter {
     }
 
     @ApiOperation("获取用户全部帖子")
-    @GetMapping(value = "/getUerPosts/{userId}")
+    @GetMapping(value = "/getUserPosts/{userId}")
     public List<Post> getPostsByUserId(@PathVariable long userId)
     {
         log.info("Fetching all posts of user:{}",userId);
         return postService.findPostByUserId(userId);
     }
 
+    //需要在一个事务中进行
+    @Transactional
     @ApiOperation("删除帖子")
     @DeleteMapping(value = "/delete/{postId}")
     public String deletePost(@PathVariable long postId)
     {
         log.info("Deleting course: {}", postId);
         try{
-            postService.deleteById(postId);
+            postTagService.deletePostTag(postId);//删除关联表中的post相关行
+            //postTagService.deleteByPostId(postId);
+            postService.deleteById(postId);//删除post表中的帖子
             return "删除帖子成功!";
         }
         catch (Exception e)

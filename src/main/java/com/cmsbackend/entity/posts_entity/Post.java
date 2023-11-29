@@ -2,6 +2,8 @@ package com.cmsbackend.entity.posts_entity;
 import com.cmsbackend.entity.tags_entity.Tag;
 import com.cmsbackend.entity.user_entity.User;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.Date;
 import javax.persistence.*;
@@ -17,9 +19,9 @@ public class Post {
     @Column(length = 500)
     private String content;
 
-    @Column(name = "created_at", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
+    @Column(name = "created_at", nullable = false)
+//    @Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime createdAt;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

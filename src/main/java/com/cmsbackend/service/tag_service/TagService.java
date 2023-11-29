@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-@Service
+
 public interface TagService {
     Tag getById(long id);
     List<Tag> getByType(int type);

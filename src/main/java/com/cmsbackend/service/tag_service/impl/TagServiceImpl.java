@@ -3,7 +3,10 @@ package com.cmsbackend.service.tag_service.impl;
 import com.cmsbackend.dao.tag_dao.TagDao;
 import com.cmsbackend.service.tag_service.TagService;
 import com.cmsbackend.entity.tags_entity.Tag;
+import org.springframework.stereotype.Service;
 import java.util.List;
+
+@Service
 public class TagServiceImpl implements TagService {
 
     private final TagDao tagDao;
