@@ -13,15 +13,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry.addInterceptor(new JwtIntercept())
                 //.addPathPatterns("/user/test")  //需要token验证的都这样写
                 .addPathPatterns("/**")
-                .addPathPatterns("/post/add")
-                .addPathPatterns("/post/getPost/{postId}")
-                .addPathPatterns("/post/getUserPosts/{userId}")
-                .addPathPatterns("/post/delete/{posyId}")
-                .addPathPatterns("/tag/getTags/{type}")
-                .addPathPatterns("/course/new")
                 .excludePathPatterns("/user/login")
-
-//                .excludePathPatterns("/admin/verify")
                 .excludePathPatterns("/user/admin/add"); //不需要token验证的都这样写
     }
 }
