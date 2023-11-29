@@ -14,7 +14,6 @@ public class InterceptorConfig implements WebMvcConfigurer {
                 //.addPathPatterns("/user/test")  //需要token验证的都这样写
                 .addPathPatterns("/**")
                 .excludePathPatterns("/user/login")
-//                .excludePathPatterns("/admin/verify")
                 .excludePathPatterns("/user/admin/add"); //不需要token验证的都这样写
     }
 }

@@ -35,8 +35,15 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+
+    public User getUserById(Long id){
+
+        User user = userDao.findById(id);
+        return user;
+    }
+
     //通过邮箱获取身份
-   public int getIdentity(String Account){
+   public Long getIdentity(String Account){
         User user = userDao.findByAccount(Account);
         return user.getIdentity();
    }

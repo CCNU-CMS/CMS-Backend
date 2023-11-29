@@ -17,11 +17,10 @@ public class InfoResp {
 
     private String dept;
 
-    private Integer identity;
-
+    private Long identity;
 
     public InfoResp(Long id, String name, String account, String sex,
-                    String dept, Integer identity){
+                    String dept, Long identity){
         this.id=id;
         this.name = name;
         this.account =account;

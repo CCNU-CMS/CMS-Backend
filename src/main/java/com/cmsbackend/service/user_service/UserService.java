@@ -8,8 +8,9 @@ public interface UserService {
     long save(User user);
 
     User getUserByAccount(String Account);
+    User getUserById(Long id);
 
-    int getIdentity(String Account);
+    Long getIdentity(String Account);
 
     void deleteUserByAccount(String account);
 

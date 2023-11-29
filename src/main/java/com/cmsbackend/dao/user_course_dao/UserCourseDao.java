@@ -12,5 +12,7 @@ import java.util.List;
 
 public interface UserCourseDao extends JpaRepository<UserCourse,Integer>, Serializable {
     List<UserCourse>  findAllByUserId (long user_id, Pageable pageable);
+
+    List<UserCourse>  findAllByCourseIdAndIdentity (long course_id, long identity, Pageable pageable);
 }
 
