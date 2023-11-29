@@ -138,6 +138,8 @@ public class CourseCenter {
             c = courseService.getCourseById(uc.getCourseId());
             course.add(c);
         }
+        System.out.println(6);
+
         System.out.println(course.size());
         return course;
     }
