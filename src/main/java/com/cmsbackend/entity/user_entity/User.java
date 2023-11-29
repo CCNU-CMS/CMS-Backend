@@ -29,7 +29,7 @@ public class User{
     private String dept;
 
     @Column
-    private Integer identity;
+    private Long identity;
 
 
 }

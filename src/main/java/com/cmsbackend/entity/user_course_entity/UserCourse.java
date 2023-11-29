@@ -21,5 +21,5 @@ public class UserCourse {
 
 
     @Column(name = "identity")
-    private Integer identiy;
+    private Long identity;
 }

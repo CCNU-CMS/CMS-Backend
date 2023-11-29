@@ -9,19 +9,13 @@ import javax.persistence.JoinColumn;
 public class UpdateInfoRequest {
 
     @JoinColumn(nullable = true)
-    private String sex;
+    private String name;
+    @JoinColumn(nullable = true)
+    private String account;
     @JoinColumn(nullable = true)
     private String dept;
     @JoinColumn(nullable = true)
-    private String name;
-    @JoinColumn(nullable = true)
-    private String address;
-    @JoinColumn(nullable = true)
-    private String certificate_code;
-    @JoinColumn(nullable = true)
-    private String certificate_image;
-    @JoinColumn(nullable = true)
-    private String contact_people;
+    private String sex;
 }
 
 

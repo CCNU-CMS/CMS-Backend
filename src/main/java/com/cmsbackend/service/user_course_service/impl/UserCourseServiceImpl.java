@@ -26,5 +26,12 @@ public class UserCourseServiceImpl implements UserCourseService {
         List<UserCourse>  userCourse =  userCourseDao.findAllByUserId(userId,pageable);
         return userCourse;
     }
+    public List<UserCourse> getUserIdByCourseIdAndIdentity(Integer CourseId,Integer identity,  Integer pageNum, Integer pageSize){
+        Pageable pageable = PageRequest.of(pageNum,pageSize);
+        List<UserCourse>  userCourse =  userCourseDao.findAllByCourseIdAndIdentity(CourseId,identity,pageable);
+        return userCourse;
+
+    }
+
 
 }

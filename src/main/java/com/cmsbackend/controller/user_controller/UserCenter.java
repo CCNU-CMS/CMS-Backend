@@ -59,7 +59,7 @@ public class UserCenter {
         System.out.println(request);
         String token = null;
         System.out.println(request);
-        int identity;
+        Long identity;
         Map<String, Object> resultMap = new HashMap<>();
         User user = userService.getUserByAccount(request.getAccount());
 
@@ -96,12 +96,38 @@ public class UserCenter {
         throw new RuntimeException("原始密码错误");
     }
 
+    @ApiOperation("修改用户信息")
+    @PutMapping(value = "/info")
+    public String UpdateInfo(@RequestBody UpdateInfoRequest request, @RequestAttribute("account") String account){
+
+        User user = userService.getUserByAccount(account);
+
+        user.setAccount(request.getAccount());
+        user.setName(request.getName());
+        user.setDept(request.getDept());
+        user.setSex(request.getSex());
+        try {
+            userService.save(user);
+            return "修改成功";
+        }catch (Exception e)
+        {
+            throw new RuntimeException("Failed to update info",e);
+        }
+    }
+
     @ApiOperation("删除用户信息")
     @DeleteMapping(value = "/admin")
     @Transactional
-    public String Info(@RequestParam("code") String code, @RequestAttribute("account") String account) {
+    public String DeleteInfo(@RequestParam("account") String account0,@RequestAttribute("account") String account) {
+
+        User user = userService.getUserByAccount(account);
+
+        if (user.getIdentity()<2){
+            throw new RuntimeException("权限不足,非管理员无法删除用户");
+       }
+
         try {
-            userService.deleteUserByAccount(account);
+            userService.deleteUserByAccount(account0);
             return "删除用户成功";
         } catch (Exception e) {
             e.printStackTrace(); // 打印异常堆栈信息
@@ -118,7 +144,7 @@ public class UserCenter {
         System.out.println("account");
         System.out.println(account);
         User user = userService.getUserByAccount(account);
-        InfoResp resp = new InfoResp(user.getId(), user.getName(),user.getSex(),user.getAccount(),user.getDept(),user.getIdentity());
+        InfoResp resp = new InfoResp(user.getId(), user.getName(),user.getAccount(),user.getSex(),user.getDept(),user.getIdentity());
         return resp;
     }
 

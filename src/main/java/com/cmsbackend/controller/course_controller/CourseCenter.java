@@ -1,5 +1,7 @@
 package com.cmsbackend.controller.course_controller;
 
+import com.cmsbackend.controller.course_controller.course_vo.CourseInfo;
+import com.cmsbackend.controller.user_controller.user_vo.InfoResp;
 import com.cmsbackend.entity.user_course_entity.UserCourse;
 import com.cmsbackend.entity.user_entity.User;
 import com.cmsbackend.service.course_service.CourseService;
@@ -48,7 +50,7 @@ public class CourseCenter {
         course.setClassroom(request.getClassroom());
         try {
             courseService.save(course);
-            return "新增课程成功，课程名称:" + course.getName();
+            return "新增课程成功，课程名称:" + course.getName() +"新增课程成功，id:" + course.getId();
         } catch (Exception e) {
             log.error("Failed to create course", e);
             throw new RuntimeException("Failed to create course", e);
@@ -57,9 +59,11 @@ public class CourseCenter {
 
     @ApiOperation("获取课程信息")
     @GetMapping(value = "/info/{courseId}")
-    public Course getCourseInfo(@PathVariable Long courseId) {
+    public CourseInfo getCourseInfo(@PathVariable Long courseId) {
         log.info("Fetching info for course: {}", courseId);
-        return courseService.getCourseById(courseId);
+        Course c = courseService.getCourseById(courseId);
+        CourseInfo c1 = new CourseInfo(courseId, c.getName(),c.getTime(),c.getClassroom(),c.getDept(),c.getDescription());
+        return c1;
     }
 
     @ApiOperation("更新课程信息")
@@ -78,7 +82,7 @@ public class CourseCenter {
         course.setClassroom(request.getClassroom());
         try {
             courseService.save(course);
-            return "课程信息更新成功，课程名称:" + course.getName();
+            return "课程信息更新成功，课程名称:" + course.getName() + "课程id:" + course.getId();
         } catch (Exception e) {
             log.error("Failed to update course info", e);
             throw new RuntimeException("Failed to update course info", e);
@@ -100,7 +104,7 @@ public class CourseCenter {
 //?????
     //给前端返回课程名称
     @ApiOperation("选择课程")
-    @PostMapping(value = "/choose/{courseId}", headers = "Content-Type=application/json", produces = "application/json")
+    @PostMapping(value = "/choose/{courseId}")
     public String chooseCourse(@PathVariable Long courseId,@RequestAttribute("account") String account) {
         log.info("Choosing new course: {}", courseId);
         UserCourse uc = new UserCourse();
@@ -108,7 +112,7 @@ public class CourseCenter {
         // 设置课程属性
         uc.setCourseId(courseId);
         uc.setUserId(u.getId());
-        uc.setIdentiy(u.getIdentity());
+        uc.setIdentity(u.getIdentity());
         try {
             userCourseService.save(uc);
             return "选择课程成功";
@@ -140,9 +144,37 @@ public class CourseCenter {
         }
         System.out.println(6);
         System.out.println(7);
+        System.out.println(course);
 
         System.out.println(course.size());
         return course;
+    }
+
+
+    @ApiOperation("查看选这门课程的所有人")
+    @GetMapping("/all/people")
+    public List<User> GetAllPeopleInfo(@RequestParam("page") Integer page, @RequestParam("course_id") Integer course_id, @RequestParam("identity") Integer identity,@RequestAttribute("account") String account) {
+//        @RequestParam("identity") Integer identity
+        User u0 = userService.getUserByAccount(account);
+//        if (u.getIdentity() < 1) {
+//            throw new RuntimeException("权限不足");
+//        }
+        System.out.println(u0.getId() + "testing");
+
+        List<UserCourse> ucs = userCourseService.getUserIdByCourseIdAndIdentity(course_id,identity,page - 1, 10);
+
+        List<User> user = new ArrayList<>();
+        for (UserCourse uc : ucs) {
+            User u;
+            u = userService.getUserById(uc.getUserId());
+            user.add(u);
+        }
+        System.out.println(6);
+        System.out.println(7);
+        System.out.println(user);
+
+        System.out.println(user.size());
+        return user;
     }
 
 

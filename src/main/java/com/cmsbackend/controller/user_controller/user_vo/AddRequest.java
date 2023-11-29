@@ -7,7 +7,7 @@ import lombok.Data;
 @ApiModel
 public class AddRequest {
     String Account;
-    Integer Identity;
+    Long Identity;
     String Password;
     String Name;
 }
