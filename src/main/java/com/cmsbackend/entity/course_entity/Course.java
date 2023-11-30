@@ -29,4 +29,7 @@ public class Course {
     @Column(length = 255)
     private String description;
 
+    @Column(length = 255)
+    private String teacher;
+
 }

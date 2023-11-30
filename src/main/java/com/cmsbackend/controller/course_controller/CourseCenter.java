@@ -16,7 +16,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -46,6 +48,7 @@ public class CourseCenter {
         course.setDept(request.getDept());
         course.setDescription(request.getDescription());
         course.setClassroom(request.getClassroom());
+        course.setTeacher(request.getTeacher());
         try {
             courseService.save(course);
 
@@ -63,7 +66,7 @@ public class CourseCenter {
     public CourseInfo getCourseInfo(@PathVariable Long courseId) {
         log.info("Fetching info for course: {}", courseId);
         Course c = courseService.getCourseById(courseId);
-        CourseInfo c1 = new CourseInfo(courseId, c.getName(),c.getTime(),c.getClassroom(),c.getDept(),c.getDescription());
+        CourseInfo c1 = new CourseInfo(courseId, c.getName(),c.getTime(),c.getClassroom(),c.getDept(),c.getDescription(),c.getTeacher());
         return c1;
     }
 
@@ -75,12 +78,15 @@ public class CourseCenter {
         if (course == null) {
             throw new RuntimeException("Course not found");
         }
+
         // 更新课程信息
         course.setName(request.getName());
         course.setDescription(request.getDescription());
         course.setTime(request.getTime());
         course.setDept(request.getDept());
         course.setClassroom(request.getClassroom());
+        course.setTeacher(request.getTeacher());
+
         try {
             courseService.save(course);
 
@@ -89,6 +95,7 @@ public class CourseCenter {
             log.error("Failed to update course info", e);
             throw new RuntimeException("Failed to update course info", e);
         }
+
     }
 
     @ApiOperation("删除课程")
@@ -103,7 +110,7 @@ public class CourseCenter {
             throw new RuntimeException("Failed to delete course", e);
         }
     }
-//?????
+
     //给前端返回课程名称
     @ApiOperation("选择课程")
     @PostMapping(value = "/choose/{courseId}")
@@ -124,34 +131,32 @@ public class CourseCenter {
         }
     }
 
-    //多表查询
-    //注意list中的值需不需要重定义
+
     @ApiOperation("查看选择的所有课程")
     @GetMapping("/all")
-    public List<Course> GetAllCourseInfo(@RequestParam("page") Integer page, @RequestAttribute("account") String account) {
-
+    public Map<String, Object> getAllCourseInfo(@RequestParam("page") Integer page, @RequestAttribute("account") String account) {
         User u = userService.getUserByAccount(account);
-//        if (u.getIdentity() < 1) {
-//            throw new RuntimeException("权限不足");
-//        }
+
         System.out.println(u.getId() + "testing");
 
-        List<UserCourse> ucs = userCourseService.getCourseIdByUserId(u.getId(),page - 1, 10);
+        List<UserCourse> ucs = userCourseService.getCourseIdByUserId(u.getId(), page - 1, 10);
 
-        List<Course> course = new ArrayList<>();
+        List<Course> courseList = new ArrayList<>();
         for (UserCourse uc : ucs) {
-            Course c;
-            c = courseService.getCourseById(uc.getCourseId());
-            course.add(c);
+            Course c = courseService.getCourseById(uc.getCourseId());
+            courseList.add(c);
         }
-        System.out.println(course.size());
-        return course;
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("size", courseList.size());
+        response.put("courses", courseList);
+        return response;
     }
 
 
     @ApiOperation("查看选这门课程的所有人")
     @GetMapping("/all/people")
-    public List<User> GetAllPeopleInfo(@RequestParam("page") Integer page, @RequestParam("course_id") Integer course_id, @RequestParam("identity") Integer identity,@RequestAttribute("account") String account) {
+    public Map<String, Object>  GetAllPeopleInfo(@RequestParam("page") Integer page, @RequestParam("course_id") Integer course_id, @RequestParam("identity") Integer identity,@RequestAttribute("account") String account) {
 //        @RequestParam("identity") Integer identity
         User u0 = userService.getUserByAccount(account);
 //        if (u.getIdentity() < 1) {
@@ -167,6 +172,11 @@ public class CourseCenter {
             u = userService.getUserById(uc.getUserId());
             user.add(u);
         }
-        return user;
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("size", user.size());
+        response.put("users", user);
+
+        return response;
     }
 }
