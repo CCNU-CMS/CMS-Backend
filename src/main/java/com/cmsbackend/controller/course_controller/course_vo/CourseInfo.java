@@ -15,14 +15,18 @@ public class CourseInfo {
     private String classroom;
     private String dept;
     private String description;
+    private String teacher;
+
 
     public CourseInfo(Long id, String name, String time, String classroom,
-                    String dept, String description){
+                    String dept, String description,String teacher){
         this.id=id;
         this.name = name;
         this.time =time;
         this.classroom = classroom;
         this.dept = dept;
         this.description = description;
+        this.teacher = teacher;
     }
+
 }

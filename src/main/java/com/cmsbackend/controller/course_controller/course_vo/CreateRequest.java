@@ -11,4 +11,5 @@ public class CreateRequest {
     String Classroom;
     String Dept;
     String Description;
+    String Teacher;
 }
