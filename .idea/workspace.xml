@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9613c3e5-824d-4982-b3f6-80271972c4ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/post_controller/PostCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/post_controller/PostCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/post_dao/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/post_dao/PostDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/post_service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/post_service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/post_service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/post_service/impl/PostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="9613c3e5-824d-4982-b3f6-80271972c4ea" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +82,7 @@
       <workItem from="1701258334550" duration="3164000" />
       <workItem from="1701261965855" duration="5569000" />
       <workItem from="1701359803003" duration="2684000" />
-      <workItem from="1701400094891" duration="651000" />
+      <workItem from="1701400094891" duration="905000" />
     </task>
     <servers />
   </component>
