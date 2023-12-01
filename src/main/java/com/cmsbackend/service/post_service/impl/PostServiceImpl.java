@@ -6,6 +6,7 @@ import com.cmsbackend.service.post_service.PostService;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -26,9 +27,9 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<Post> findAll(Integer pageNum, Integer pageSize){
+    public Page<Post> findAll(Integer pageNum, Integer pageSize){
         Pageable pageable = PageRequest.of(pageNum,pageSize);
-        List<Post> posts = postDao.findAllPosts(pageable);
+        Page<Post> posts = postDao.findAll(pageable);
         return posts;
     }
 
