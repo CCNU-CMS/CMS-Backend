@@ -10,7 +10,7 @@ public interface PostDao extends JpaRepository<Post, Long>, Serializable {
 
     Post findPostById(long id);
 
-    List<Post> findAllPosts(Pageable pageable);
+    Page<Post> findAll(Pageable pageable);
     //根据用户id获取帖子
     List<Post> findPostByUserId(long user_id);
 

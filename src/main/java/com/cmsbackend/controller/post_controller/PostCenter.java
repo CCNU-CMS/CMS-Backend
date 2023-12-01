@@ -21,6 +21,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import java.util.List;
+import org.springframework.data.domain.Page;
 @Slf4j
 @RestController
 @RequestMapping("/post")
@@ -77,7 +78,7 @@ public class PostCenter {
 
     @ApiOperation("获取全部帖子")
     @GetMapping(value = "/getAllPosts/{page}")
-    public List<Post> getAllPosts(@PathVariable("page") Integer page)
+    public Page<Post> getAllPosts(@PathVariable("page") Integer page)
     {
         log.info("Fetching all posts");
         return postService.findAll(page - 1, 15);
