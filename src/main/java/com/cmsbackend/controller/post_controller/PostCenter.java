@@ -75,11 +75,19 @@ public class PostCenter {
         }
     }
 
+    @ApiOperation("获取全部帖子")
+    @GetMapping(value = "/getAllPosts/{page}")
+    public List<Post> getAllPosts(@PathVariable("page") Integer page)
+    {
+        log.info("Fetching all posts");
+        return postService.findAll(page - 1, 15);
+    }
+
     @ApiOperation("获取帖子信息")
     @GetMapping(value = "/getPost/{postId}")
     public Post getPostInfo(@PathVariable long postId)
     {
-        log.info("Fetching info for course: {}", postId);
+        log.info("Fetching info for post: {}", postId);
         return postService.findPostById(postId);
     }
 

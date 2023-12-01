@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9613c3e5-824d-4982-b3f6-80271972c4ea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/comment_controller/CommentCenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/comment_controller/comment_vo/AddRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/comment_dao/CommentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/entity/comment_entity/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/comment_service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/comment_service/impl/CommentServicelmpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/comment_controller/CommentCenter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/comment_controller/comment_vo/AddRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/dao/comment_dao/CommentDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/entity/comment_entity/Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/comment_service/CommentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/comment_service/impl/CommentServicelmpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmsbackend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cmsbackend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/CmsbackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/CmsbackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/CourseCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/CourseCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/CourseInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/CourseInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/CreateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/CreateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/UpdateCourseRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/UpdateCourseRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/entity/course_entity/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/entity/course_entity/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/CmsbackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/CmsbackendApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/base/ResponseAdvice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/base/ResponseAdvice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/base/RestExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/base/RestExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/base/ResultData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/base/ResultData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/base/ReturnCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/base/ReturnCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/config/InterceptorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/config/InterceptorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/course_controller/CourseCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/course_controller/CourseCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/course_controller/course_vo/CourseInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/course_controller/course_vo/CourseInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/course_controller/course_vo/CreateRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/course_controller/course_vo/CreateRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/course_controller/course_vo/UpdateCourseRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/course_controller/course_vo/UpdateCourseRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/post_controller/PostCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/post_controller/PostCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/post_controller/post_vo/AddRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/post_controller/post_vo/AddRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/tag_controller/TagCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/tag_controller/TagCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/tag_controller/tag_vo/GetRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/tag_controller/tag_vo/GetRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/UserCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/UserCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/user_vo/AddRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/user_vo/AddRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/user_vo/InfoResp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/user_vo/InfoResp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/user_vo/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/user_vo/LoginRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/user_vo/LoginResp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/user_vo/LoginResp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/user_vo/UpdatePswRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/controller/user_controller/user_vo/UpdatePswRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/dao/post_dao/PostDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/dao/post_dao/PostDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/dao/tag_dao/TagDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/dao/tag_dao/TagDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/dao/user_dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/dao/user_dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/entity/course_entity/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/entity/course_entity/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/entity/posts_entity/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/entity/posts_entity/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/entity/tags_entity/Tag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/entity/tags_entity/Tag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/entity/user_entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/entity/user_entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/intercept/JwtIntercept.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/intercept/JwtIntercept.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/post_service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/post_service/PostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/post_service/impl/PostServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/post_service/impl/PostServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/post_tag_service/PostTagService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/post_tag_service/PostTagService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/tag_service/TagService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/tag_service/TagService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/tag_service/impl/TagServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/tag_service/impl/TagServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/user_service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/user_service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/user_service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/service/user_service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/utils/JWT/JwtTokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/utils/JWT/JwtTokenUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/utils/hash/Hash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/utils/hash/Hash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cmsbackend/utils/random_code/RandomCodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cmsbackend/utils/random_code/RandomCodeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmsbackend-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmsbackend-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmsbackend-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmsbackend-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.cmsbackend.CmsbackendApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.cmsbackend.CmsbackendApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.cmsbackend.CmsbackendApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.cmsbackend.CmsbackendApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/cmsbackend/CmsbackendApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/cmsbackend/CmsbackendApplicationTests.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2Yme4QllOthAaIMQVKRAqVwt9dl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Merging main",
+    "last_opened_file_path": "/Users/apple/IdeaProjects/CMS-Backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="CmsbackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="cmsbackend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cmsbackend.CmsbackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9613c3e5-824d-4982-b3f6-80271972c4ea" name="Changes" comment="" />
+      <created>1701134994158</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701134994158</updated>
+      <workItem from="1701134995550" duration="26119000" />
+      <workItem from="1701228416177" duration="682000" />
+      <workItem from="1701231409385" duration="307000" />
+      <workItem from="1701242045255" duration="6298000" />
+      <workItem from="1701258334550" duration="3164000" />
+      <workItem from="1701261965855" duration="5569000" />
+      <workItem from="1701359803003" duration="2364000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.UnsatisfiedDependencyException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

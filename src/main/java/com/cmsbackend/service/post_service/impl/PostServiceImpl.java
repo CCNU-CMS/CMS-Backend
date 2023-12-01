@@ -3,6 +3,8 @@ package com.cmsbackend.service.post_service.impl;
 import com.cmsbackend.dao.post_dao.PostDao;
 import com.cmsbackend.entity.posts_entity.Post;
 import com.cmsbackend.service.post_service.PostService;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +23,13 @@ public class PostServiceImpl implements PostService {
         postDao.save(post);
         // 返回保存后的 Post 对象的 ID
         return post.getId();
+    }
+
+    @Override
+    public List<Post> findAll(Integer pageNum, Integer pageSize){
+        Pageable pageable = PageRequest.of(pageNum,pageSize);
+        List<Post> posts = postDao.findAllPosts(pageable);
+        return posts;
     }
 
     @Override

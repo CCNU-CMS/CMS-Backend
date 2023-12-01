@@ -26,7 +26,7 @@ spring:
 server:
   servlet:
     context-path: /api/v1
-  port: 3919
+  port: 3920
   address: 0.0.0.0
 
 jwt:
