@@ -17,10 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-import java.util.List;
 import org.springframework.data.domain.Page;
 @Slf4j
 @RestController
@@ -78,10 +76,14 @@ public class PostCenter {
 
     @ApiOperation("获取全部帖子")
     @GetMapping(value = "/getAllPosts/{page}")
-    public Page<Post> getAllPosts(@PathVariable("page") Integer page)
+    public Map<String, Object> getAllPosts(@PathVariable("page") Integer page)
     {
         log.info("Fetching all posts");
-        return postService.findAll(page - 1, 15);
+        Page<Post> p =  postService.findAll(page - 1, 15);
+        Map<String, Object> response = new HashMap<>();
+        response.put("size", p.getTotalElements());
+        response.put("posts", p);
+        return response;
     }
 
     @ApiOperation("获取帖子信息")
