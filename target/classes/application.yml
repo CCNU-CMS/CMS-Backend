@@ -10,9 +10,9 @@ spring:
     name: ${APP_NAME:unnamed}
   datasource:
 #    url: jdbc:mysql://mysql/ordering_system
-    url: jdbc:mysql://127.0.0.1/cms  #?????
-    username: root
-    password: 036068
+    url: jdbc:mysql://rm-wz907gsr637s950hm8o.mysql.rds.aliyuncs.com/cms  #?????
+    username: team_db
+    password: hjj0918+++
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
