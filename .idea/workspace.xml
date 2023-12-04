@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9613c3e5-824d-4982-b3f6-80271972c4ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/CourseCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/CourseCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/CourseInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/CourseInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/CreateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/CreateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/UpdateCourseRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/UpdateCourseRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/user_controller/UserCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/user_controller/UserCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/course_dao/CourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/course_dao/CourseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/user_dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/user_dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/entity/course_entity/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/entity/course_entity/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/entity/user_entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/entity/user_entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/course_service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/course_service/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/course_service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/course_service/impl/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/user_service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/user_service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/user_service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/user_service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +87,7 @@
       <workItem from="1701359803003" duration="2684000" />
       <workItem from="1701400094891" duration="905000" />
       <workItem from="1701573437890" duration="2824000" />
-      <workItem from="1701667351471" duration="8218000" />
+      <workItem from="1701667351471" duration="9036000" />
     </task>
     <servers />
   </component>
