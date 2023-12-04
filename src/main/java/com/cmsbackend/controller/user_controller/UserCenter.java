@@ -1,15 +1,19 @@
 package com.cmsbackend.controller.user_controller;
 
 import com.cmsbackend.controller.user_controller.user_vo.*;
+import com.cmsbackend.entity.user_course_entity.UserCourse;
 import com.cmsbackend.entity.user_entity.User;
 import com.cmsbackend.service.user_service.UserService;
 import com.cmsbackend.utils.JWT.JwtTokenUtil;
 import com.cmsbackend.utils.hash.Hash;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import io.swagger.annotations.Api;
@@ -149,7 +153,29 @@ public class UserCenter {
         return resp;
     }
 
-
+    @ApiOperation("查看所有用户")
+    @GetMapping("/all")
+    public Map<String, Object>  GetAllPeople(@RequestParam("page") Integer page, @RequestParam("identity") Integer identity,@RequestAttribute("account") String account) {
+//        @RequestParam("identity") Integer identity
+        User u0 = userService.getUserByAccount(account);
+        if (u0.getIdentity() < 2) {
+            throw new RuntimeException("权限不足");
+        }
+        System.out.println(u0.getId() + "testing");
+        if (identity != -1) {
+            List<User> us = userService.getUserByIdentity(identity,page - 1, 10);
+            Map<String, Object> response = new HashMap<>();
+            response.put("size", us.size());
+            response.put("users", us);
+            return response;
+        } else {
+            Page<User> us = userService.getUser(page - 1, 10);
+            Map<String, Object> response = new HashMap<>();
+            response.put("size", us.getTotalElements());
+            response.put("users", us);
+            return response;
+        }
+    }
 
     @ApiOperation("错误")
     @GetMapping(value = "/error")

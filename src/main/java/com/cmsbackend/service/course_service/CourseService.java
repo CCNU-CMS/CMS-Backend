@@ -1,6 +1,8 @@
 package com.cmsbackend.service.course_service;
 
 import com.cmsbackend.entity.course_entity.Course;
+import org.springframework.data.domain.Page;
+
 import java.util.List;
 
 public interface CourseService {
@@ -10,6 +12,6 @@ public interface CourseService {
 
     void deleteCourseById(long id);
 
-//    List<Course> getCourseInfo(long user_id, Integer pageNum, Integer pageSize);
+    Page<Course> getCourseInfo(Integer pageNum, Integer pageSize);
 
 }

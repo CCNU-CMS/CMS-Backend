@@ -9,6 +9,7 @@ public class CreateRequest {
     String Name;
     String Time;
     String Classroom;
+    String Academy;
     String Dept;
     String Description;
     String Teacher;

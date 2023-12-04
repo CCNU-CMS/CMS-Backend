@@ -13,6 +13,7 @@ import com.cmsbackend.controller.course_controller.course_vo.UpdateCourseRequest
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -45,6 +46,7 @@ public class CourseCenter {
         // 设置课程属性
         course.setName(request.getName());
         course.setTime(request.getTime());
+        course.setAcademy(request.getAcademy());
         course.setDept(request.getDept());
         course.setDescription(request.getDescription());
         course.setClassroom(request.getClassroom());
@@ -66,7 +68,7 @@ public class CourseCenter {
     public CourseInfo getCourseInfo(@PathVariable Long courseId) {
         log.info("Fetching info for course: {}", courseId);
         Course c = courseService.getCourseById(courseId);
-        CourseInfo c1 = new CourseInfo(courseId, c.getName(),c.getTime(),c.getClassroom(),c.getDept(),c.getDescription(),c.getTeacher());
+        CourseInfo c1 = new CourseInfo(courseId, c.getName(),c.getTime(),c.getClassroom(),c.getAcademy(),c.getDept(),c.getDescription(),c.getTeacher());
         return c1;
     }
 
@@ -83,6 +85,7 @@ public class CourseCenter {
         course.setName(request.getName());
         course.setDescription(request.getDescription());
         course.setTime(request.getTime());
+        course.setAcademy(request.getAcademy());
         course.setDept(request.getDept());
         course.setClassroom(request.getClassroom());
         course.setTeacher(request.getTeacher());
@@ -131,9 +134,24 @@ public class CourseCenter {
         }
     }
 
+    @ApiOperation("查看所有课程")
+    @GetMapping("/all/info")
+    public Map<String, Object> getCourseInfo(@RequestParam("page") Integer page, @RequestAttribute("account") String account) {
+        User u = userService.getUserByAccount(account);
+
+        System.out.println(u.getId() + "testing");
+
+        Page<Course> cs = courseService.getCourseInfo(page - 1, 10);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("size", cs.getTotalElements());
+        response.put("courses", cs);
+        return response;
+    }
+
 
     @ApiOperation("查看选择的所有课程")
-    @GetMapping("/all")
+    @GetMapping("/all/choose")
     public Map<String, Object> getAllCourseInfo(@RequestParam("page") Integer page, @RequestAttribute("account") String account) {
         User u = userService.getUserByAccount(account);
 
@@ -155,7 +173,7 @@ public class CourseCenter {
 
 
     @ApiOperation("查看选这门课程的所有人")
-    @GetMapping("/all/people")
+    @GetMapping("/all/choose/people")
     public Map<String, Object>  GetAllPeopleInfo(@RequestParam("page") Integer page, @RequestParam("course_id") Integer course_id, @RequestParam("identity") Integer identity,@RequestAttribute("account") String account) {
 //        @RequestParam("identity") Integer identity
         User u0 = userService.getUserByAccount(account);

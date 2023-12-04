@@ -24,6 +24,9 @@ public class Course {
     private String classroom;
 
     @Column(length = 20)
+    private String academy;
+
+    @Column(length = 20)
     private String dept;
 
     @Column(length = 255)

@@ -2,9 +2,15 @@ package com.cmsbackend.service.user_service.impl;
 
 //import com.cms.cmsbackend.controller.user_controller.user_vo.UpdateInfoRequest;
 import com.cmsbackend.dao.user_dao.UserDao;
+import com.cmsbackend.entity.user_course_entity.UserCourse;
 import com.cmsbackend.entity.user_entity.User;
 import com.cmsbackend.service.user_service.UserService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -52,6 +58,17 @@ public class UserServiceImpl implements UserService {
         userDao.deleteByAccount(account);
     }
 
+    public List<User> getUserByIdentity(Integer Identity,Integer pageNum, Integer pageSize){
+        Pageable pageable = PageRequest.of(pageNum,pageSize);
+        List<User>  user =  userDao.findAllByIdentity(Identity, pageable);
+        return user;
+    }
+
+    public Page<User> getUser(Integer pageNum, Integer pageSize){
+        Pageable pageable = PageRequest.of(pageNum,pageSize);
+        Page<User> user =  userDao.findAll(pageable);
+        return user;
+    }
 //   public List<User> getInfo(Integer identity, Integer status,Integer pageNum,Integer pageSize){
 //     Pageable pageable = PageRequest.of(pageNum,pageSize);
 //     List<User> user = userDao.findAllByIdentityAndStatus(identity,status, pageable);

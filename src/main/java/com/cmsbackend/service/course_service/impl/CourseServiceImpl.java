@@ -4,6 +4,7 @@ import com.cmsbackend.dao.course_dao.CourseDao;
 import com.cmsbackend.entity.course_entity.Course;
 import com.cmsbackend.service.course_service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -33,12 +34,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
 
-//    public List<Course> getCourseInfo(long supplier_id,Integer pageNum,Integer pageSize){
-//        Pageable pageable = PageRequest.of(pageNum,pageSize);
-//        List<Course> product = courseDao.findAllByUs(supplier_id,pageable);
-//        System.out.println(product);
-//        return product;
-//    }
+    public Page<Course> getCourseInfo(Integer pageNum,Integer pageSize){
+        Pageable pageable = PageRequest.of(pageNum,pageSize);
+        Page<Course> course = courseDao.findAll(pageable);
+        return course;
+    }
 
 //    @Override
 //    public List<Course> getCoursesByName(String name) {

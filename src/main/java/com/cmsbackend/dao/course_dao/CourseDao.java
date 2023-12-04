@@ -1,6 +1,8 @@
 package com.cmsbackend.dao.course_dao;
 
 import com.cmsbackend.entity.course_entity.Course;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -16,7 +18,7 @@ public interface CourseDao extends JpaRepository<Course, Long>, Serializable {
 
     void deleteById(Long id);
 
-    // 可以根据需要添加更多自定义查询方法
-    // 例如根据课程描述模糊查询、根据教师ID查询课程等
+    Page<Course> findAll(Pageable pageable);
+
 
 }

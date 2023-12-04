@@ -13,6 +13,11 @@ spring:
     url: jdbc:mysql://rm-wz907gsr637s950hm8o.mysql.rds.aliyuncs.com/cms  #?????
     username: team_db
     password: hjj0918+++
+
+#    url: jdbc:mysql://127.0.0.1/cms  #?????
+#    username: root
+#    password: 036068
+
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect

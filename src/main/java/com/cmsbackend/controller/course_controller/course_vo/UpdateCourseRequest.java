@@ -9,6 +9,7 @@ public class UpdateCourseRequest {
     String Name;
     String Time;
     String Classroom;
+    String Academy;
     String Dept;
     String Description;
     String Teacher;
