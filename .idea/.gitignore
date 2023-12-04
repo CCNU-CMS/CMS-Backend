@@ -1,7 +1,7 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-src/main/resources/application.yml
+src/main/resources/config/application.yml/
 target/
 # Editor-based HTTP Client requests
 /httpRequests/
