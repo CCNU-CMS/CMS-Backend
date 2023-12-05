@@ -1,5 +1,6 @@
 package com.cmsbackend.controller.course_controller.course_vo;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
@@ -12,5 +13,7 @@ public class CreateRequest {
     String Academy;
     String Dept;
     String Description;
-    String Teacher;
+
+    @JsonAlias(value = "t_account")
+    String TAccount;
 }

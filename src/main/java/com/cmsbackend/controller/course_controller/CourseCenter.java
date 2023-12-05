@@ -50,10 +50,20 @@ public class CourseCenter {
         course.setDept(request.getDept());
         course.setDescription(request.getDescription());
         course.setClassroom(request.getClassroom());
-        course.setTeacher(request.getTeacher());
+
+        String taccount = request.getTAccount();
+        User u = userService.getUserByAccount(taccount);
+        course.setTeacher(u.getName());
+
+        UserCourse uc = new UserCourse();
+
+
         try {
             courseService.save(course);
-
+            uc.setCourseId(course.getId());
+            uc.setUserId(u.getId());
+            uc.setIdentity(u.getIdentity());
+            userCourseService.save(uc);
             return "新增课程成功，课程名称:" + course.getName() +"新增课程成功，id:" + course.getId();
 
         } catch (Exception e) {
