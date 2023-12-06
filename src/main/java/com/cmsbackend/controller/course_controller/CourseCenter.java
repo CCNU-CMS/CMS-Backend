@@ -98,7 +98,7 @@ public class CourseCenter {
         course.setAcademy(request.getAcademy());
         course.setDept(request.getDept());
         course.setClassroom(request.getClassroom());
-        course.setTeacher(request.getTeacher());
+//        course.setTeacher(request.getTeacher());
 
         try {
             courseService.save(course);

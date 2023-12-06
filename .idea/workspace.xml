@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9613c3e5-824d-4982-b3f6-80271972c4ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/CourseCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/CourseCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/UpdateCourseRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/UpdateCourseRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +39,9 @@
     <option name="jreName" value="1.8 (2)" />
   </component>
   <component name="ProjectId" id="2Yme4QllOthAaIMQVKRAqVwt9dl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -92,6 +97,8 @@
       <workItem from="1701667351471" duration="10160000" />
       <workItem from="1701690647589" duration="623000" />
       <workItem from="1701780570926" duration="4093000" />
+      <workItem from="1701793631749" duration="135000" />
+      <workItem from="1701825784010" duration="1698000" />
     </task>
     <servers />
   </component>

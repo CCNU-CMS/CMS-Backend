@@ -12,5 +12,5 @@ public class UpdateCourseRequest {
     String Academy;
     String Dept;
     String Description;
-    String Teacher;
+//    String Teacher;
 }
