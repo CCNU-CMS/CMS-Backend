@@ -31,4 +31,14 @@ public class UserCourseServiceImpl implements UserCourseService {
         List<UserCourse>  userCourse =  userCourseDao.findAllByCourseIdAndIdentity(CourseId,identity,pageable);
         return userCourse;
     }
+
+    public void deleteUserCourseByCourseIdAndUserId(long cid, long uid){
+        userCourseDao.deleteByCourseIdAndUserId(cid, uid);
+    }
+//    public  List<Long> getCourseIdByUserId(long id){
+//        userCourseDao.
+//    }
+    public List<Long> getCourseIdByUserId(Long userId) {
+        return userCourseDao.findCourseIdsByUserId(userId);
+    }
 }

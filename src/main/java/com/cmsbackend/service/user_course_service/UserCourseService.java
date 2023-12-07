@@ -8,7 +8,10 @@ public interface UserCourseService {
     List<UserCourse> getCourseIdByUserId(Long userId,  Integer pageNum, Integer pageSize);
     List<UserCourse> getUserIdByCourseIdAndIdentity(Integer CourseId,Integer identity,  Integer pageNum, Integer pageSize);
     long save(UserCourse uc);
+    void deleteUserCourseByCourseIdAndUserId(long cid,long uid);
 
-
+//    List<Long> getCourseIdByUserId(long id);
 //    List<UserCourse> getCourseIdByUserId(Long id);
+      List<Long> getCourseIdByUserId(Long userId);
+
 }

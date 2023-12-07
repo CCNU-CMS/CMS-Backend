@@ -40,6 +40,10 @@ public class CourseServiceImpl implements CourseService {
         return course;
     }
 
+    public Page<Course> getCourseInfoExcludingSelected(int page, int size, List<Long> excludedCourseIds) {
+        Pageable pageable = PageRequest.of(page, size);
+        return courseDao.findCoursesExcluding(excludedCourseIds, pageable);
+    }
 //    @Override
 //    public List<Course> getCoursesByName(String name) {
 //        return courseDao.findByName(name);

@@ -14,4 +14,6 @@ public interface CourseService {
 
     Page<Course> getCourseInfo(Integer pageNum, Integer pageSize);
 
-}
+    Page<Course> getCourseInfoExcludingSelected(int page, int size, List<Long> excludedCourseIds);
+
+    }

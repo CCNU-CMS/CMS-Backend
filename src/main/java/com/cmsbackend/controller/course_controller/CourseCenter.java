@@ -14,6 +14,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -144,6 +145,24 @@ public class CourseCenter {
         }
     }
 
+
+    @ApiOperation("学生退课")
+    @DeleteMapping(value = "/drop/{courseId}")
+    @Transactional
+    public String dropCourse(@PathVariable Long courseId,@RequestAttribute("account") String account) {
+        log.info("Drop course: {}", courseId);
+        UserCourse uc = new UserCourse();
+        User u = userService.getUserByAccount(account);
+        // 设置课程属性
+        try {
+            userCourseService.deleteUserCourseByCourseIdAndUserId(courseId,u.getId());
+            return "退课成功";
+        } catch (Exception e) {
+            log.error("Failed to drop course", e);
+            throw new RuntimeException("Failed to drop course", e);
+        }
+    }
+/*
     @ApiOperation("查看所有课程")
     @GetMapping("/all/info")
     public Map<String, Object> getCourseInfo(@RequestParam("page") Integer page, @RequestAttribute("account") String account) {
@@ -153,11 +172,37 @@ public class CourseCenter {
 
         Page<Course> cs = courseService.getCourseInfo(page - 1, 10);
 
+
+
         Map<String, Object> response = new HashMap<>();
         response.put("size", cs.getTotalElements());
         response.put("courses", cs);
         return response;
     }
+*/
+    @ApiOperation("查看所有课程")
+    @GetMapping("/all/info")
+    public Map<String, Object> getCourseInfo(@RequestParam("page") Integer page, @RequestAttribute("account") String account) {
+        User u = userService.getUserByAccount(account);
+
+        System.out.println(u.getId() + "testing");
+
+        // 获取当前用户已选的课程ID列表
+        List<Long> selectedCourseIds = userCourseService.getCourseIdByUserId(u.getId());
+        Page<Course> cs;
+        if (selectedCourseIds.isEmpty()) {
+            // 如果用户没有选择任何课程，则获取所有课程
+            cs = courseService.getCourseInfo(page - 1, 10);
+        } else {
+            // 否则，获取除了已选课程之外的课程
+            cs = courseService.getCourseInfoExcludingSelected(page - 1, 10, selectedCourseIds);
+        }
+        Map<String, Object> response = new HashMap<>();
+        response.put("size", cs.getTotalElements());
+        response.put("courses", cs.getContent());  // 确保这里返回的是课程内容
+        return response;
+    }
+
 
 
     @ApiOperation("查看选择的所有课程")

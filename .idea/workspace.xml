@@ -7,7 +7,12 @@
     <list default="true" id="9613c3e5-824d-4982-b3f6-80271972c4ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/CourseCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/CourseCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/UpdateCourseRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/course_vo/UpdateCourseRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/course_dao/CourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/course_dao/CourseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/user_course_dao/UserCourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/dao/user_course_dao/UserCourseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/course_service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/course_service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/course_service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/course_service/impl/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/user_course_service/UserCourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/user_course_service/UserCourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/user_course_service/impl/UserCourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/service/user_course_service/impl/UserCourseServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +103,9 @@
       <workItem from="1701690647589" duration="623000" />
       <workItem from="1701780570926" duration="4093000" />
       <workItem from="1701793631749" duration="135000" />
-      <workItem from="1701825784010" duration="1698000" />
+      <workItem from="1701825784010" duration="1904000" />
+      <workItem from="1701877777717" duration="3835000" />
+      <workItem from="1701912494831" duration="2132000" />
     </task>
     <servers />
   </component>
