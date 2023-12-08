@@ -1,4 +1,5 @@
 package com.cmsbackend.entity.comment_entity;
+import com.cmsbackend.entity.user_entity.User;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,8 +14,9 @@ public class Comment {
     @Column
     private long postId;
 
-    @Column
-    private long userId;
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
 
     @Column(length = 1000)
     private String content;
