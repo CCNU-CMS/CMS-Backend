@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.cmsbackend.controller.comment_controller.comment_vo.AddRequest;
 import com.cmsbackend.controller.comment_controller.comment_vo.InfoResp;
+import com.cmsbackend.controller.comment_controller.comment_vo.oneInfoResp;
 
 import java.util.*;
 @Slf4j
@@ -64,27 +65,61 @@ public class CommentCenter {
         log.info("Fetching comments by post ID: {}", postId);
         List<Comment> comments = commentService.getCommentsByPostId(postId);
 
-        // Convert Comment
-        List<InfoResp> infoResp = new ArrayList<>();
+
+        List<InfoResp> infoRespList = new ArrayList<>();
         for (Comment comment : comments) {
-            InfoResp Resp = new InfoResp(comment.getId(), comment.getPostId(), comment.getUser().getId(), comment.getUser().getName(), comment.getUser().getAccount(), comment.getContent(), comment.getCommentDate(), comment.getParentCommentId());
-            infoResp.add(Resp);
+            Comment parentComment = null;
+
+            long parentUserId = 0;
+            String parentUserName = null;
+            String parentUserAccount = null;
+
+            if (comment.getParentCommentId() != 0) {
+                parentComment = commentService.getCommentById(comment.getParentCommentId());
+                parentUserId = parentComment.getUser().getId();
+                parentUserName = parentComment.getUser().getName();
+                parentUserAccount = parentComment.getUser().getAccount();
+            }
+
+            InfoResp infoResp = new InfoResp(
+                    comment.getId(),
+                    comment.getPostId(),
+                    comment.getUser().getId(),
+                    comment.getUser().getName(),
+                    comment.getUser().getAccount(),
+                    comment.getContent(),
+                    comment.getCommentDate(),
+                    comment.getParentCommentId(),
+                    parentUserId,
+                    parentUserName,
+                    parentUserAccount
+            );
+            infoRespList.add(infoResp);
         }
-        return infoResp;
+        return infoRespList;
     }
 
     @ApiOperation("根据父评论ID查询评论")
     @GetMapping("/parent/{parentCommentId}")
-    public List<InfoResp> getCommentsByParentCommentId(@PathVariable Long parentCommentId) {
+    public List<oneInfoResp> getCommentsByParentCommentId(@PathVariable Long parentCommentId) {
         log.info("Fetching comments by parent comment ID: {}", parentCommentId);
         List<Comment> comments = commentService.getCommentsByParentCommentId(parentCommentId);
-        // Convert Comment
-        List<InfoResp> infoResp = new ArrayList<>();
+
+        List<oneInfoResp> infoRespList = new ArrayList<>();
         for (Comment comment : comments) {
-            InfoResp Resp = new InfoResp(comment.getId(), comment.getPostId(), comment.getUser().getId(), comment.getUser().getName(), comment.getUser().getAccount(), comment.getContent(), comment.getCommentDate(), comment.getParentCommentId());
-            infoResp.add(Resp);
+            oneInfoResp Resp = new oneInfoResp(
+                    comment.getId(),
+                    comment.getPostId(),
+                    comment.getUser().getId(),
+                    comment.getUser().getName(),
+                    comment.getUser().getAccount(),
+                    comment.getContent(),
+                    comment.getCommentDate(),
+                    comment.getParentCommentId()
+            );
+            infoRespList.add(Resp);
         }
-        return infoResp;
+        return infoRespList;
     }
 
     @ApiOperation("删除评论")
