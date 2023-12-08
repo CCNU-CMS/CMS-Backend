@@ -6,7 +6,7 @@ import lombok.Data;
 @ApiModel
 public class AddRequest {
     long postId;
-    long userId;
+    String account;
     String content;
     String commentDate;
     long parentCommentId;
