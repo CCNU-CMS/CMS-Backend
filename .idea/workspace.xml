@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9613c3e5-824d-4982-b3f6-80271972c4ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/comment_controller/CommentCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/comment_controller/CommentCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/comment_controller/comment_vo/InfoResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/comment_controller/comment_vo/InfoResp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/CourseCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/course_controller/CourseCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/user_controller/UserCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/user_controller/UserCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/user_controller/user_vo/InfoResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/user_controller/user_vo/InfoResp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/user_controller/user_vo/UpdateInfoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/controller/user_controller/user_vo/UpdateInfoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cmsbackend/entity/user_entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cmsbackend/entity/user_entity/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +41,6 @@
   <component name="MavenRunner">
     <option name="jreName" value="1.8 (2)" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 2
-}</component>
   <component name="ProjectId" id="2Yme4QllOthAaIMQVKRAqVwt9dl" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -50,16 +49,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\123\CMS-Backend\src\main\resources\config" />
@@ -100,6 +101,9 @@
       <workItem from="1701912494831" duration="2132000" />
       <workItem from="1702029764627" duration="350000" />
       <workItem from="1702033500471" duration="1990000" />
+      <workItem from="1702208212893" duration="928000" />
+      <workItem from="1702294437114" duration="6201000" />
+      <workItem from="1702387344866" duration="1468000" />
     </task>
     <servers />
   </component>

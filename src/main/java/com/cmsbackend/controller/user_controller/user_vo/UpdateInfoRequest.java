@@ -16,6 +16,8 @@ public class UpdateInfoRequest {
     private String dept;
     @JoinColumn(nullable = true)
     private String sex;
+    @JoinColumn(nullable = true)
+    private String avatar;
 }
 
 

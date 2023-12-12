@@ -28,9 +28,9 @@ public class User{
     @Column(length = 20)
     private String dept;
 
-//    @Column(length = 500)
-//    private String avatar;
-
     @Column
     private Long identity;
+
+    @Column(length = 500)
+    private String avatar;
 }

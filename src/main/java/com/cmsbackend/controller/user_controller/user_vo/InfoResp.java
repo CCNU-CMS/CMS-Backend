@@ -19,14 +19,17 @@ public class InfoResp {
 
     private Long identity;
 
+    private String avatar;
+
     public InfoResp(Long id, String name, String account, String sex,
-                    String dept, Long identity){
+                    String dept, Long identity,String avatar){
         this.id=id;
         this.name = name;
         this.account =account;
         this.sex = sex;
         this.dept = dept;
         this.identity = identity;
+        this.avatar = avatar;
     }
 
 }

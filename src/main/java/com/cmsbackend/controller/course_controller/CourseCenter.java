@@ -145,6 +145,27 @@ public class CourseCenter {
         }
     }
 
+    //给前端返回课程名称
+    @ApiOperation("管理员给学生加课")
+    @PostMapping(value = "/choose/admin/{courseId}/{studentAccount}")
+    public String adminChooseCourse(@PathVariable Long courseId,@PathVariable String studentAccount,@RequestAttribute("account") String account) {
+        log.info("admin choose new course for student: {}", courseId);
+        UserCourse uc = new UserCourse();
+//        User u = userService.getUserByAccount(account);
+        User student = userService.getUserByAccount(studentAccount);
+        // 设置课程属性
+        uc.setCourseId(courseId);
+        uc.setUserId(student.getId());
+        uc.setIdentity(student.getIdentity());
+
+        try {
+            userCourseService.save(uc);
+            return "选择课程成功";
+        } catch (Exception e) {
+            log.error("Failed to choose course", e);
+            throw new RuntimeException("Failed to choose course", e);
+        }
+    }
 
     @ApiOperation("学生退课")
     @DeleteMapping(value = "/drop/{courseId}")
@@ -252,4 +273,7 @@ public class CourseCenter {
 
         return response;
     }
+
+
+
 }

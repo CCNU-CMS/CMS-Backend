@@ -100,6 +100,22 @@ public class UserCenter {
         throw new RuntimeException("原始密码错误");
     }
 
+    @ApiOperation("修改用户头像")
+    @PutMapping(value = "/avatar")
+    public String UpdateAvatar(@RequestBody UpdateAvatar request, @RequestAttribute("account") String account){
+
+        User user = userService.getUserByAccount(account);
+
+        user.setAvatar(request.getAvatar());
+        try {
+            userService.save(user);
+            return "修改头像成功";
+        }catch (Exception e)
+        {
+            throw new RuntimeException("Failed to update info",e);
+        }
+    }
+
     @ApiOperation("修改用户信息")
     @PutMapping(value = "/info")
     public String UpdateInfo(@RequestBody UpdateInfoRequest request, @RequestAttribute("account") String account){
@@ -110,6 +126,9 @@ public class UserCenter {
         user.setName(request.getName());
         user.setDept(request.getDept());
         user.setSex(request.getSex());
+        if (request.getAvatar() != null) {
+            user.setAvatar(request.getAvatar());
+        }
         try {
             userService.save(user);
             return "修改成功";
@@ -149,7 +168,18 @@ public class UserCenter {
         System.out.println(account);
         User user = userService.getUserByAccount(account);
 
-        InfoResp resp = new InfoResp(user.getId(), user.getName(),user.getAccount(),user.getSex(),user.getDept(),user.getIdentity());
+        InfoResp resp = new InfoResp(user.getId(), user.getName(),user.getAccount(),user.getSex(),user.getDept(),user.getIdentity(),user.getAvatar());
+        return resp;
+    }
+
+    @ApiOperation("根据工号查看用户信息")
+    @GetMapping(value = "/account/{sAccount}")
+    public InfoResp StInfo(@RequestAttribute("account") String account, @PathVariable String sAccount){
+        System.out.println(account);
+        System.out.println(sAccount);
+
+        User user = userService.getUserByAccount(sAccount);
+        InfoResp resp = new InfoResp(user.getId(), user.getName(),user.getAccount(),user.getSex(),user.getDept(),user.getIdentity(),user.getAvatar());
         return resp;
     }
 
@@ -176,6 +206,7 @@ public class UserCenter {
             return response;
         }
     }
+
 
     @ApiOperation("错误")
     @GetMapping(value = "/error")
