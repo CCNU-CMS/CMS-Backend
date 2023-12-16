@@ -7,6 +7,10 @@ import java.util.List;
 public interface UserCourseService {
     List<UserCourse> getCourseIdByUserId(Long userId,  Integer pageNum, Integer pageSize);
     List<UserCourse> getUserIdByCourseIdAndIdentity(Integer CourseId,Integer identity,  Integer pageNum, Integer pageSize);
+
+    UserCourse getCourseByCidAndUid(long cid,long uid);
+
+
     long save(UserCourse uc);
     void deleteUserCourseByCourseIdAndUserId(long cid,long uid);
 

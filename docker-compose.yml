@@ -1,0 +1,31 @@
+version: '3'
+services:
+  cms-system:
+    image: wishforpeace/cms-system:latest
+    container_name: ordering-system
+    privileged: true
+    restart: always
+    ports:
+      - 8081:8081
+
+  qiniu:
+    image: cms-system/qiniu:latest
+    container_name: qiniu
+    privileged: true
+    restart: always
+    ports:
+      - 8082:8082
+
+  nginx-ordering:
+    image: nginx:1.21.5
+    privileged: true
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 2023:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/log:/var/log/nginx
+    depends_on:
+      - cms-system
+      - qiniu

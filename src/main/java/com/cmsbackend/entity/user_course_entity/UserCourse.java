@@ -19,7 +19,9 @@ public class UserCourse {
     @Column(name = "user_id")
     private Long userId;
 
-
     @Column(name = "identity")
     private Long identity;
+
+    @Column(name = "grade")
+    private Float grade;
 }

@@ -20,5 +20,8 @@ public interface UserCourseDao extends JpaRepository<UserCourse,Integer>, Serial
 
     @Query("SELECT uc.courseId FROM UserCourse uc WHERE uc.userId = :userId")
     List<Long> findCourseIdsByUserId(@Param("userId") Long userId);
+
+    UserCourse getUserCourseByCourseIdAndAndUserId(long course_id, long user_id);
+
 }
 

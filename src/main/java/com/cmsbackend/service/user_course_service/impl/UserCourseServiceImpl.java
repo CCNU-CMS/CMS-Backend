@@ -41,4 +41,11 @@ public class UserCourseServiceImpl implements UserCourseService {
     public List<Long> getCourseIdByUserId(Long userId) {
         return userCourseDao.findCourseIdsByUserId(userId);
     }
+
+    public UserCourse getCourseByCidAndUid(long cid, long uid){
+        UserCourse uc = userCourseDao.getUserCourseByCourseIdAndAndUserId(cid, uid);
+        return uc;
+    }
+
+
 }
